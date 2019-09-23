@@ -58,10 +58,7 @@ class User
         return $this->name;
     }
 
-    /**
-     * @return Collection|Question[]
-     */
-    public function getQuestions(): Collection
+    public function getQuestions()
     {
         return $this->questions;
     }
@@ -71,5 +68,11 @@ class User
         $this->questions->add($question);
         $question->setUser($this);
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
 
 }

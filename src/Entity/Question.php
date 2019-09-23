@@ -106,10 +106,7 @@ class Question
         return $this;
     }
 
-    /**
-     * @return Collection|Answer[]
-     */
-    public function getAnswers(): Collection
+    public function getAnswers()
     {
         return $this->answers;
     }
@@ -118,5 +115,10 @@ class Question
     {
         $this->answers->add($answer);
         $answer->setQuestion($this);
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }
